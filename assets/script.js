@@ -7,17 +7,15 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var count = Number(prompt("Please enter the amount of characters you would like in your password."));
   console.log(count);
-  // added an alert to show how many characters between 6 and 150
-if (count < 6 || count > 150) {
-  alert("Please enter more than 6 characters less than 150.")
-}
-return;
-
-
-  var letters = "abcdefghijklmnopqrstuvwxyz";
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var special = "~!@#$%^&*()_+=./"
+  var letters= "abcdefghijklmnopqrstuvwxyz";
+  var upper= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var special= "~!@#$%^&*()-=+[]:;<>?";
+  var numbers= "0123456789"
   var genPassword = "";
+
+if (count<8 || count > 128)
+alert("Please enter a character count between 8 - 128")
+ return "";
 
   for (var i = 0; i < count; i++) {
     var random = Math.floor(Math.random() * letters.length);
